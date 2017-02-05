@@ -1,0 +1,23 @@
+{
+
+  "/test/no": {
+	"code": 302,
+	"destination": "/test/yes"
+  },
+
+	"/test/no301": {
+		"code": 301,
+		"destination": "/test/yes"
+  },
+  
+	"/test/wild/*": {
+		"code": 302,
+		"destination": "/test/wildyes"
+  },
+
+	"/test/wilder/*": {
+		"code": 302,
+		"destination": "/test/wilding/*"
+  }
+
+}
