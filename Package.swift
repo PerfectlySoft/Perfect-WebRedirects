@@ -2,7 +2,7 @@
 // Date: 2017-02-02 05:28:41 +0000
 import PackageDescription
 let package = Package(
-    name: "Perfect-WebRedirects",
+    name: "PerfectWebRedirects",
     targets: [],
     dependencies: [
         .Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2),
