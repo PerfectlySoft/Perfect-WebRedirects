@@ -19,9 +19,14 @@
 
 import PerfectHTTP
 
+
 public class WebRedirectsFilter: HTTPRequestFilter {
 
 	public func filter(request: HTTPRequest, response: HTTPResponse, callback: (HTTPRequestFilterResult) -> ()) {
+
+		if RedirectsConfig.standardRules.isEmpty && RedirectsConfig.wildcardRules.isEmpty {
+			RedirectsConfig.load()
+		}
 
 		var doRedirect = false
 		var to: RedirectsConfig.Sub = RedirectsConfig.Sub()
@@ -36,6 +41,11 @@ public class WebRedirectsFilter: HTTPRequestFilter {
 				if request.path.startsWith(key.split("*")[0]) {
 					doRedirect = true
 					to = value as RedirectsConfig.Sub
+					if to.destination.endsWith("*") {
+						var dest = to.destination.chompRight("*")
+						dest += request.path.split("/").last!
+						to.destination = dest
+					}
 				}
 			}
 		}
