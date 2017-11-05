@@ -50,7 +50,7 @@ A demo showing the usage, and working of the Perfect WebRedirects module can be 
 Import the dependency into your project by specifying it in your project's Package.swift file, or adding it via Perfect Assistant.
 
 ``` swift
-.Package(url: "https://github.com/PerfectlySoft/Perfect-WebRedirects", majorVersion: 1),
+.Package(url: "https://github.com/PerfectlySoft/Perfect-WebRedirects", majorVersion: 3),
 ```
 
 Then in your `main.swift` file where you configure your web server, add it as an import, and add the filter:
@@ -106,7 +106,7 @@ Note that multiple JSON files can exist in this directory - all will be loaded t
 
 ## Compatibility with Swift
 
-The master branch of this project currently compiles with **Xcode 8.2** or the **Swift 3.0.2** toolchain on Ubuntu.
+The master branch of this project currently compiles with **Xcode 9** or the **Swift 4** toolchain on Ubuntu.
 
 
 ## Issues
