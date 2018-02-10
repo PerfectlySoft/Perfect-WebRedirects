@@ -19,8 +19,7 @@
 
 import PerfectLib
 import PerfectLogger
-import SwiftString
-
+import Foundation
 
 public struct RedirectsConfig {
 
@@ -62,7 +61,7 @@ public struct RedirectsConfig {
 
 			try d.forEachEntry(closure: {
 				n in
-				if n.endsWith(".json") {
+        if n.hasSuffix(".json") {
 					let thisFile = File("\(RedirectsConfig.rulesDir)\(n)")
 					do {
 						try thisFile.open(.read, permissions: .readUser)
@@ -73,7 +72,7 @@ public struct RedirectsConfig {
 							let ii = i.value as! [String: Any]
 							if let c = ii["code"], let d = ii["destination"] {
 								let s = Sub(c as! Int, d as! String)
-								if i.key.endsWith("*") {
+                if i.key.hasSuffix("*") {
 									RedirectsConfig.wildcardRules[i.key] = s
 								} else {
 									RedirectsConfig.standardRules[i.key] = s

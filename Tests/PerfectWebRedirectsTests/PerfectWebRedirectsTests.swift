@@ -1,7 +1,7 @@
 import XCTest
-@testable import Perfect_WebRedirects
+@testable import PerfectWebRedirects
 
-class Perfect_WebRedirectsTests: XCTestCase {
+class PerfectWebRedirectsTests: XCTestCase {
 //	var workingDirectory = "/Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-WebRedirects"
 
 
@@ -13,7 +13,7 @@ class Perfect_WebRedirectsTests: XCTestCase {
     }
 
 
-    static var allTests : [(String, (Perfect_WebRedirectsTests) -> () throws -> Void)] {
+    static var allTests : [(String, (PerfectWebRedirectsTests) -> () throws -> Void)] {
         return [
             ("testExample", testExample),
         ]
