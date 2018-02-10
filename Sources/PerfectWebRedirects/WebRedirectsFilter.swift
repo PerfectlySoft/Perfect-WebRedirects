@@ -38,12 +38,13 @@ public class WebRedirectsFilter: HTTPRequestFilter {
 
 			// check if covered by a wildcard
 			for (key, value) in RedirectsConfig.wildcardRules {
-				if request.path.startsWith(key.split("*")[0]) {
+        if request.path.starts(with: key.split(separator: "*")[0]) {
 					doRedirect = true
 					to = value as RedirectsConfig.Sub
-					if to.destination.endsWith("*") {
-						var dest = to.destination.chompRight("*")
-						dest += request.path.split("/").last!
+          if to.destination.hasSuffix("*") {
+						var dest = to.destination
+            dest.removeLast(1)
+						dest += request.path.split(separator: "/").last ?? ""
 						to.destination = dest
 					}
 				}

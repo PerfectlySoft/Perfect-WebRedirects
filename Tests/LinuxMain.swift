@@ -1,6 +1,6 @@
 import XCTest
-@testable import Perfect_WebRedirectsTests
+@testable import PerfectWebRedirectsTests
 
 XCTMain([
-     testCase(Perfect_WebRedirectsTests.allTests),
+     testCase(PerfectWebRedirectsTests.allTests),
 ])
